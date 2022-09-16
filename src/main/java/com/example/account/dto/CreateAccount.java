@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 public class CreateAccount {
     @Getter
     @Setter
+    @AllArgsConstructor
     public static class Request {
         @NotNull // 컨트롤러 valid 확인용
         @Min(1) // 0인 사람 없음

@@ -32,6 +32,8 @@ public class AccountService {
         AccountUser accountUser = accountUserRepository.findById(userId)
                 .orElseThrow(() -> new AccountException(ErrorCode.USER_NOT_FOUND));
 
+        validateCreateAccount(accountUser); // 되도록 메서드 추출해서 깔끔하게 정리하기
+
         String newAccountNumber = accountRepository.findFirstByOrderByIdDesc() // 가장 최근에 생성된 Account 가져오기
                 .map(account -> (Integer.parseInt(account.getAccountNumber())) + 1 + "") // 1 더하고 문자열로 변환
                 .orElse("1000000000"); // 없을 경우 기본 첫 계좌번호
@@ -45,6 +47,12 @@ public class AccountService {
                         .registeredAt(LocalDateTime.now())
                         .build()
         ));
+    }
+
+    private void validateCreateAccount(AccountUser accountUser) {
+        if (accountRepository.countByAccountUser(accountUser) >= 10) {
+            throw new AccountException(ErrorCode.MAX_ACCOUNT_PER_USER_10);
+        }
     }
 
     @Transactional
