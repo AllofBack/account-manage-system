@@ -22,6 +22,7 @@ public class AccountDto { // 서비스간 통신할 때 사용하기 위한 DTO
         return AccountDto.builder()
                 .userId(account.getAccountUser().getId())
                 .accountNumber(account.getAccountNumber())
+                .balance(account.getBalance())
                 .registeredAt(account.getRegisteredAt())
                 .unRegisteredAt(account.getUnRegisteredAt())
                 .build();

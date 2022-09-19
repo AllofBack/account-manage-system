@@ -20,34 +20,40 @@
 │
 ├── controller
 │   ├── AccountController
-│   └── 
+│   └── TransactionController
 │  
 ├── domain
 │   ├── Account
 │   └── AccountUser
-│   └── 
+│   └── Transaction
 │
 ├── dto
+│   ├── AccountDto
+│   ├── AccountInfo
 │   ├── CreateAccount
-│   └── 
+│   ├── DeleteAccount
+│   ├── TransactionDto
+│   └── UseBalance
 │
 ├── exception
-│   ├── AccountException
-│   └──
+│   └── AccountException
 │ 
 ├── repository
 │   ├── AccountRepository
-│   └── AccountUserRepository
+│   ├── AccountUserRepository
+│   ├── TransactionRepository
+│   └── 
 │
 ├── service
 │   ├── AccountService
 │   ├── RedisService
-│   └── 
+│   └── TransactionService
 │
 ├── type
 │   ├── AccountStatus
 │   ├── ErrorCode
-│   └── 
+│   ├── TransactionResultType
+│   └── TransactionType
 │
 ├── AccountApplication
 └── application.yml
