@@ -30,8 +30,10 @@
 ├── dto
 │   ├── AccountDto
 │   ├── AccountInfo
+│   ├── CancelBalance
 │   ├── CreateAccount
 │   ├── DeleteAccount
+│   ├── QueryTransactionResponse
 │   ├── TransactionDto
 │   └── UseBalance
 │

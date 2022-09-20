@@ -5,7 +5,6 @@ import com.example.account.dto.AccountInfo;
 import com.example.account.dto.CreateAccount;
 import com.example.account.dto.DeleteAccount;
 import com.example.account.service.AccountService;
-import com.example.account.service.RedisTestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +19,6 @@ import java.util.stream.Collectors;
 // 서비스는 레파지토리로 접속하는 순차적인 과정 설정
 public class AccountController {
     private final AccountService accountService;
-    // private final RedisTestService redisTestService;
 
     @PostMapping("/account")
     public CreateAccount.Response createAccount( // response로 리턴 받기
@@ -44,6 +42,12 @@ public class AccountController {
                         request.getAccountNumber()
                 )
         );
+    }
+
+    @GetMapping("/account/{id}")
+    public Account getAccount(
+            @PathVariable Long id) {
+        return accountService.getAccount(id);
     }
 
     @GetMapping("/account")
