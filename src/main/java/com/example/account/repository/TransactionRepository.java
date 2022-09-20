@@ -14,4 +14,5 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     // 1. 다룰 엔티티 - Transaction
     // 2. PK의 Type
 
+    Optional<Transaction> findByTransactionId(String transactionId);
 }
