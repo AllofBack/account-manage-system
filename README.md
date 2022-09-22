@@ -29,6 +29,7 @@
 ├── domain
 │   ├── Account
 │   └── AccountUser
+│   └── BaseEntity
 │   └── Transaction
 │
 ├── dto

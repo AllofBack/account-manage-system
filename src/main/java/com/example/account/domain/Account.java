@@ -4,8 +4,6 @@ import com.example.account.exception.AccountException;
 import com.example.account.type.AccountStatus;
 import com.example.account.type.ErrorCode;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -17,11 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder // 빌더로 객체생성해주기 위해선 위의 두 constructor 필요
 @Entity // 일반적인 테이블이 아닌 Entity, 자바 객체가 아닌 설정이라고 보기
-@EntityListeners(AuditingEntityListener.class) // Listener을 사용하기 위해선 application 전체 설정에 넣어주어야함
-public class Account {
-    @Id
-    @GeneratedValue
-    private Long id; // ID라는 키를 Account 테이블의 PK로 사용할 것
+public class Account extends BaseEntity{
 
     @ManyToOne // N:1 구조
     private AccountUser accountUser;
@@ -33,11 +27,6 @@ public class Account {
 
     private LocalDateTime registeredAt;
     private LocalDateTime unRegisteredAt;
-
-    @CreatedDate
-    private LocalDateTime createdAt;
-    @LastModifiedDate
-    private LocalDateTime updatedAt;
 
     public void useBalance(Long amount){
         if (amount > balance) {
