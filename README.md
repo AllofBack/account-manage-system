@@ -33,11 +33,13 @@
 │   ├── CancelBalance
 │   ├── CreateAccount
 │   ├── DeleteAccount
+│   ├── ErrorResponse
 │   ├── QueryTransactionResponse
 │   ├── TransactionDto
 │   └── UseBalance
 │
 ├── exception
+│   ├── GlobalExceptionHandler
 │   └── AccountException
 │ 
 ├── repository

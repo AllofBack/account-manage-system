@@ -17,8 +17,9 @@ public enum ErrorCode {
     ACCOUNT_ALREADY_UNREGISTERED("계좌가 이미 해지 되었습니다."),
     AMOUNT_EXCEED_BALANCE("거래 금액이 계좌 잔액을 초과했습니다."),
     BALANCE_NOT_EMPTY("잔액이 있는 계좌는 해지할 수 없습니다."),
-    MAX_ACCOUNT_PER_USER_10("사용자 최대 계좌는 10개입니다.");
+    MAX_ACCOUNT_PER_USER_10("사용자 최대 계좌는 10개입니다."),
 
+    INTERNAL_SERVER_ERROR("내부 서버 오류가 발생했습니다.");
 
     private final String description;
 }
