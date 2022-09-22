@@ -13,6 +13,10 @@
 
 ## :pushpin: 디렉토리 구성 ##
 ```bash
+├── aop
+│   └── AccountLock
+│   └── AccountLockidInterface
+│
 ├── config
 │   └── JpaAuditingConfiguration
 │   └── LocalRedisConfig
@@ -45,12 +49,12 @@
 ├── repository
 │   ├── AccountRepository
 │   ├── AccountUserRepository
-│   ├── TransactionRepository
-│   └── 
+│   └──  TransactionRepository
 │
 ├── service
 │   ├── AccountService
-│   ├── RedisService
+│   ├── LockAopAspect
+│   ├── LockService
 │   └── TransactionService
 │
 ├── type

@@ -1,5 +1,6 @@
 package com.example.account.dto;
 
+import com.example.account.aop.AccountLockidInterface;
 import com.example.account.type.TransactionResultType;
 import lombok.*;
 
@@ -10,7 +11,7 @@ public class UseBalance {
     @Getter
     @Setter
     @AllArgsConstructor
-    public static class Request {
+    public static class Request implements AccountLockidInterface {
         @NotNull // 컨트롤러 valid 확인용
         @Min(1) // 0인 사람 없음
         private Long userId;
